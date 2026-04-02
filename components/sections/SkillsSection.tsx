@@ -126,7 +126,7 @@ export default function SkillsSection() {
   const { theme } = useTheme();
 
   return (
-    <section id="skills" ref={ref} className="py-32 relative overflow-hidden">
+    <section id="skills" ref={ref} className="py-10 md:py-32  relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full"

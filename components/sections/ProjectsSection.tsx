@@ -193,7 +193,7 @@ export default function ProjectsSection() {
   const { theme } = useTheme();
 
   return (
-    <section id="projects" ref={ref} className="py-32 relative">
+    <section id="projects" ref={ref} className="py-10 md:py-32  relative">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at center, rgba(147,51,234,0.04) 0%, transparent 70%)' }}

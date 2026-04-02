@@ -261,7 +261,7 @@ export default function ExperienceSection() {
   const { theme } = useTheme();
 
   return (
-    <section id="experience" ref={ref} className="py-32 relative overflow-hidden">
+    <section id="experience" ref={ref} className="py-10 md:py-32  relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div

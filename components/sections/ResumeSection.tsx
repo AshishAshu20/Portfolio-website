@@ -18,7 +18,7 @@ export default function ResumeSection() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const { theme } = useTheme();
   return (
-    <section id="resume" ref={ref} className="py-32 relative">
+    <section id="resume" ref={ref} className="py-10 md:py-32  relative">
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 80% 50%, rgba(147,51,234,0.05) 0%, transparent 60%)' }} />
 

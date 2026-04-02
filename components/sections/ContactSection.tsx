@@ -187,7 +187,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-32 relative">
+    <section id="contact" ref={ref} className="py-10 md:py-32  relative">
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 20% 50%, rgba(147,51,234,0.06) 0%, transparent 60%)' }} />
 

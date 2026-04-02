@@ -23,7 +23,7 @@ export default function AboutSection() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const { theme } = useTheme();
   return (
-    <section id="about" ref={ref} className="py-32 relative">
+    <section id="about" ref={ref} className="py-10 md:py-32  relative">
       {/* Bg glow */}
       <div className="absolute left-0 top-1/2 w-[400px] h-[400px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(147,51,234,0.05) 0%, transparent 70%)', filter: 'blur(60px)' }} />
@@ -51,7 +51,7 @@ export default function AboutSection() {
             className="flex flex-col gap-6"
           >
             <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              I&apos;m a <strong className={theme === 'dark' ? "text-white/80" : "text-black/80"}>passionate Frontend Developer</strong> focused on building fast, scalable, and visually polished web applications. I specialize in{' '}
+              I&apos;m a <strong className={theme === 'dark' ? "text-white/80" : "text-black/80"}>passionate Web Developer</strong> focused on building fast, scalable, and visually polished web applications. I specialize in{' '}
               <strong className="text-purple-400">React.js</strong>,{' '}
               <strong className="text-blue-400">Next.js</strong>, and{' '}
               <strong className="text-cyan-400">TypeScript</strong>, turning complex ideas into seamless user experiences.
