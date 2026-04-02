@@ -25,12 +25,12 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Ashish Sharma — Senior Frontend Developer | React.js & Next.js Specialist',
+  title: 'Ashish Sharma — Web Developer | React.js & Next.js Specialist',
   description:
-    'Senior Frontend Developer based in Mohali, Punjab. Specializing in React.js, Next.js, TypeScript, animations, and building high-performance web applications.',
+    'Web Developer based in Mohali, Punjab. Specializing in React.js, Next.js, TypeScript, animations, and building high-performance web applications.',
   keywords: [
     'Ashish Sharma',
-    'Frontend Developer',
+    'Web Developer',
     'React.js',
     'Next.js',
     'TypeScript',
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://ashishsharma.dev',
-    title: 'Ashish Sharma — Senior Frontend Developer',
+    title: 'Ashish Sharma — Web Developer',
     description: 'Building fast, scalable, and visually polished web experiences.',
     siteName: 'Ashish Sharma Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ashish Sharma — Senior Frontend Developer',
+    title: 'Ashish Sharma — Web Developer',
     description: 'Building fast, scalable, and visually polished web experiences.',
   },
   robots: { index: true, follow: true },

@@ -34,7 +34,7 @@ export default function FooterSection() {
               </span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Senior Frontend Developer crafting fast, beautiful, and impactful web experiences. Based in Mohali, Punjab.
+              Web Developer crafting fast, beautiful, and impactful web experiences. Based in Mohali, Punjab.
             </p>
             <div className="flex gap-3">
               {[

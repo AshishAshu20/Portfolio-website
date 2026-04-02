@@ -83,7 +83,6 @@ function ExperienceCard({ exp, index, inView }: {
         style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
         className="relative rounded-3xl overflow-hidden"
       >
-        {/* Card base */}
         <div
           className="absolute inset-0 rounded-3xl"
           style={{
@@ -97,7 +96,6 @@ function ExperienceCard({ exp, index, inView }: {
           }}
         />
 
-        {/* Animated corner glow */}
         <motion.div
           className="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none"
           style={{
@@ -110,17 +108,14 @@ function ExperienceCard({ exp, index, inView }: {
           transition={{ duration: 4 + index, repeat: Infinity, ease: 'easeInOut' }}
         />
 
-        {/* Top accent */}
         <div
           className="absolute top-0 left-0 right-0 h-[2px]"
           style={{ background: `linear-gradient(90deg, ${exp.color}, rgba(${exp.colorRgb},0.2), transparent)` }}
         />
 
         <div className="relative p-8 md:p-10">
-          {/* Header row */}
           <div className="flex flex-wrap items-start justify-between gap-5 mb-8">
             <div className="flex items-start gap-4">
-              {/* Icon badge */}
               <motion.div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                 style={{
@@ -159,7 +154,6 @@ function ExperienceCard({ exp, index, inView }: {
               </div>
             </div>
 
-            {/* Right: period + stat */}
             <div className="flex flex-col items-end gap-2">
               <div
                 className="flex items-center gap-2 text-sm font-mono px-4 py-2 rounded-xl"
@@ -185,7 +179,6 @@ function ExperienceCard({ exp, index, inView }: {
             </div>
           </div>
 
-          {/* Stat chip */}
           <div className="flex items-center gap-3 mb-7">
             <div
               className="flex items-center gap-2 px-4 py-2 rounded-xl"
@@ -198,11 +191,9 @@ function ExperienceCard({ exp, index, inView }: {
               <span className="text-lg font-bold" style={{ color: exp.color }}>{exp.stat.value}</span>
               <span className="text-xs font-mono" style={{ color: 'var(--text-secondary)' }}>{exp.stat.label}</span>
             </div>
-            {/* Divider line */}
             <div className="flex-1 h-px" style={{ background: `linear-gradient(90deg, rgba(${exp.colorRgb},0.3), transparent)` }} />
           </div>
 
-          {/* Highlights */}
           <div className="grid md:grid-cols-2 gap-3 mb-7">
             {exp.highlights.map((point, j) => (
               <motion.div
@@ -230,7 +221,6 @@ function ExperienceCard({ exp, index, inView }: {
             ))}
           </div>
 
-          {/* Tech tags */}
           <div className="flex flex-wrap gap-2 pt-5 border-t" style={{ borderColor: `rgba(${exp.colorRgb},0.12)` }}>
             {exp.tech.map((t, ti) => (
               <motion.span
@@ -262,7 +252,6 @@ export default function ExperienceSection() {
 
   return (
     <section id="experience" ref={ref} className="py-10 md:py-32  relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           className="absolute right-0 top-1/4 w-[500px] h-[500px] rounded-full"
@@ -285,7 +274,6 @@ export default function ExperienceSection() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -313,9 +301,7 @@ export default function ExperienceSection() {
           </p>
         </motion.div>
 
-        {/* Timeline connector bar */}
         <div className="relative">
-          {/* Animated vertical line between cards */}
           <motion.div
             className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 z-0"
             style={{

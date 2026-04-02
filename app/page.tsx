@@ -10,6 +10,7 @@ import ContactSection from '@/components/sections/ContactSection';
 import FooterSection from '@/components/sections/FooterSection';
 import MarqueeBar from '@/components/ui/MarqueeBar';
 import SmoothScroll from '@/components/ui/SmoothScroll';
+import PricingSection from '@/components/sections/PricingSection';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
+      <PricingSection/>
       <ResumeSection />
       <ContactSection />
       <FooterSection />
