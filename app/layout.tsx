@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   title: 'Ashish Sharma — Web Developer | React.js & Next.js Specialist',
   description:
     'Web Developer based in Mohali, Punjab. Specializing in React.js, Next.js, TypeScript, animations, and building high-performance web applications.',
+  icons: {
+    icon: '/logo.png',                
+    shortcut: '/logo.png',            
+    apple: '/logo.png',               
+  },
   keywords: [
     'Ashish Sharma',
     'Web Developer',
@@ -68,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <main>{children}</main>
           <TawkChat />
-          <WhatsAppButton/>
+          <WhatsAppButton />
           <Toaster
             position="top-right"
             toastOptions={{
