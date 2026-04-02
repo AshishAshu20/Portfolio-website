@@ -261,7 +261,7 @@ export default function SkillsSection() {
         </motion.div>
 
         {/* Count-up stats */}
-        <div className="grid grid-cols-4 gap-4 max-w-lg mx-auto mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-lg mx-auto mb-16">
           {stats.map((stat, i) => (
             <StatCard key={stat.label} {...stat} active={inView} delay={0.2 + i * 0.08} />
           ))}
