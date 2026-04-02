@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { ArrowDown, Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { ArrowDown, Mail, Instagram, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import { useTheme } from '@/context/ThemeContext';
 
@@ -13,29 +13,39 @@ const ParticleBackground = dynamic(
 );
 
 export default function HeroSection() {
+  const { theme } = useTheme();
+
   const scrollToAbout = () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const { theme } = useTheme();
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" id="hero">
-      {/* Background layers */}
       <div className="absolute inset-0 grid-bg opacity-60" />
       <ParticleBackground />
 
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(147,51,234,0.08) 0%, transparent 70%)', filter: 'blur(40px)' }} />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+      {/* Decorative orbs — clamped to max 50vw so they never cause scroll */}
+      <div
+        className="absolute top-1/4 left-1/4 rounded-full pointer-events-none"
+        style={{
+          width: 'min(600px, 50vw)', height: 'min(600px, 50vw)',
+          background: 'radial-gradient(circle, rgba(147,51,234,0.08) 0%, transparent 70%)',
+          filter: 'blur(40px)',
+        }}
+      />
+      <div
+        className="absolute bottom-1/4 right-1/4 rounded-full pointer-events-none"
+        style={{
+          width: 'min(500px, 50vw)', height: 'min(500px, 50vw)',
+          background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)',
+          filter: 'blur(40px)',
+        }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left — Text */}
           <div className="flex flex-col gap-8">
-            {/* Status badge */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -47,7 +57,6 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            {/* Name */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -62,12 +71,11 @@ export default function HeroSection() {
               </h1>
             </motion.div>
 
-            {/* Typing role */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 3.3 }}
-              className="flex items-center gap-3"
+              className="flex items-center gap-3 flex-wrap"
             >
               <span className="text-lg font-mono" style={{ color: 'var(--text-secondary)' }}>I build</span>
               <span className="text-lg font-mono font-semibold text-purple-400">
@@ -85,7 +93,6 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            {/* Bio */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -93,11 +100,12 @@ export default function HeroSection() {
               className="text-base leading-relaxed max-w-lg"
               style={{ color: 'var(--text-secondary)' }}
             >
-              Web Developer specializing in <strong className={theme === 'dark' ? "text-white/80" : "text-black/80"}>React.js</strong> & <strong className={theme === 'dark' ? "text-white/80" : "text-black/80"}>Next.js</strong>. 
+              Web Developer specializing in{' '}
+              <strong className={theme === 'dark' ? 'text-white/80' : 'text-black/80'}>React.js</strong> &amp;{' '}
+              <strong className={theme === 'dark' ? 'text-white/80' : 'text-black/80'}>Next.js</strong>.{' '}
               Turning complex ideas into smooth, scalable user experiences with a sharp eye for animation and performance.
             </motion.p>
 
-            {/* CTA buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -108,19 +116,16 @@ export default function HeroSection() {
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
                 className="btn-primary relative z-10 flex items-center gap-2"
               >
-                View My Work
-                <ArrowDown size={16} />
+                View My Work <ArrowDown size={16} />
               </button>
               <button
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="btn-outline flex items-center gap-2"
               >
-                <Mail size={16} />
-                Let&apos;s Talk
+                <Mail size={16} /> Let&apos;s Talk
               </button>
             </motion.div>
 
-            {/* Social links */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -163,35 +168,46 @@ export default function HeroSection() {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
-              {/* Rotating border ring */}
-              <div className="absolute -inset-4 rounded-full animate-spin-slow opacity-40"
-                style={{ background: 'conic-gradient(from 0deg, #9333ea, #3b82f6, #06b6d4, #9333ea)' }} />
-              <div className="absolute -inset-4 rounded-full"
-                style={{ background: 'radial-gradient(circle, rgba(3,3,5,1) 85%, transparent 100%)' }} />
+              {/* Spinning ring */}
+              <div
+                className="absolute -inset-4 rounded-full animate-spin-slow opacity-40"
+                style={{ background: 'conic-gradient(from 0deg, #9333ea, #3b82f6, #06b6d4, #9333ea)' }}
+              />
+              <div
+                className="absolute -inset-4 rounded-full"
+                style={{ background: 'radial-gradient(circle, rgba(3,3,5,1) 85%, transparent 100%)' }}
+              />
 
-              {/* Image frame */}
-              <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden animate-float"
+              {/* Photo */}
+              <div
+                className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden animate-float"
                 style={{
                   border: '2px solid rgba(147,51,234,0.5)',
                   boxShadow: '0 0 60px rgba(147,51,234,0.3), 0 0 120px rgba(59,130,246,0.1)',
-                }}>
+                }}
+              >
                 <Image
                   src="/profile.jpeg"
                   alt="Ashish Sharma"
                   fill
                   priority
                   className="object-cover object-top"
-                  sizes="(max-width: 768px) 288px, 384px"
+                  sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0"
-                  style={{ background: 'linear-gradient(to top, rgba(3,3,5,0.4) 0%, transparent 60%)' }} />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: 'linear-gradient(to top, rgba(3,3,5,0.4) 0%, transparent 60%)' }}
+                />
               </div>
 
-              {/* Floating stat cards */}
+              {/* Floating stat cards — hidden on mobile via CSS class */}
               <motion.div
-                className="absolute -left-12 top-1/4 glass-card px-4 py-3 rounded-2xl animate-float-delayed"
-                style={{ animationDelay: '1s' }}
+                className="hero-stat-card absolute glass-card px-4 py-3 rounded-2xl animate-float-delayed"
+                style={{
+                  left: '-3rem',
+                  top: '25%',
+                  animationDelay: '1s',
+                }}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 4.5 }}
@@ -201,8 +217,12 @@ export default function HeroSection() {
               </motion.div>
 
               <motion.div
-                className="absolute -right-10 bottom-1/4 glass-card px-4 py-3 rounded-2xl animate-float"
-                style={{ animationDelay: '2s' }}
+                className="hero-stat-card absolute glass-card px-4 py-3 rounded-2xl animate-float"
+                style={{
+                  right: '-2.5rem',
+                  bottom: '25%',
+                  animationDelay: '2s',
+                }}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 4.7 }}
@@ -226,7 +246,7 @@ export default function HeroSection() {
         {/* Scroll indicator */}
         <motion.button
           onClick={scrollToAbout}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 5 }}

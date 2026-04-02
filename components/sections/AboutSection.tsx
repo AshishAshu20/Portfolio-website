@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Code2, Zap, Monitor, Globe } from 'lucide-react';
-import { useTheme } from '@/context/ThemeContext';
 
 const strengths = [
   { icon: Code2, title: 'Clean Architecture', desc: 'Modular, maintainable code that scales with your team and product.' },
@@ -21,12 +20,12 @@ const stats = [
 
 export default function AboutSection() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
-  const { theme } = useTheme();
+
   return (
-    <section id="about" ref={ref} className="py-10 md:py-32  relative">
+    <section id="about" ref={ref} className="py-32 relative overflow-hidden">
       {/* Bg glow */}
-      <div className="absolute left-0 top-1/2 w-[400px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(147,51,234,0.05) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+      <div className="absolute left-0 top-1/2 rounded-full pointer-events-none" style={{ width: "min(400px, 40vw)", height: "min(400px, 40vw)",
+        background: 'radial-gradient(circle, rgba(147,51,234,0.05) 0%, transparent 70%)', filter: 'blur(60px)' }} />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -51,16 +50,16 @@ export default function AboutSection() {
             className="flex flex-col gap-6"
           >
             <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              I&apos;m a <strong className={theme === 'dark' ? "text-white/80" : "text-black/80"}>passionate Web Developer</strong> focused on building fast, scalable, and visually polished web applications. I specialize in{' '}
+              I&apos;m a <strong className="text-white">passionate Frontend Developer</strong> focused on building fast, scalable, and visually polished web applications. I specialize in{' '}
               <strong className="text-purple-400">React.js</strong>,{' '}
               <strong className="text-blue-400">Next.js</strong>, and{' '}
               <strong className="text-cyan-400">TypeScript</strong>, turning complex ideas into seamless user experiences.
             </p>
             <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              With <strong className={theme === 'dark' ? "text-white/80" : "text-black/80"}>3+ years of hands-on experience</strong>, I&apos;ve shipped production-grade applications ranging from real-time sales dashboards to AI-powered job platforms. I care deeply about micro-interactions, accessibility, and crafting smooth, premium experiences across all devices.
+              With <strong className="text-white">3+ years of hands-on experience</strong>, I&apos;ve shipped production-grade applications ranging from real-time sales dashboards to AI-powered job platforms. I care deeply about micro-interactions, accessibility, and crafting smooth, premium experiences across all devices.
             </p>
             <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Currently based in <strong className={theme === 'dark' ? "text-white/80" : "text-black/80"}>Mohali, Punjab</strong>, I&apos;m always exploring new technologies and pushing the boundaries of what&apos;s possible on the web. My work is inspired by cutting-edge platforms like{' '}
+              Currently based in <strong className="text-white">Mohali, Punjab</strong>, I&apos;m always exploring new technologies and pushing the boundaries of what&apos;s possible on the web. My work is inspired by cutting-edge platforms like{' '}
               <span className="text-purple-400 font-mono text-sm">teamco.work</span>,{' '}
               <span className="text-blue-400 font-mono text-sm">pilltabs.com</span>, and{' '}
               <span className="text-cyan-400 font-mono text-sm">hiremii</span>.
