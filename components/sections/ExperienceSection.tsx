@@ -10,8 +10,8 @@ const experiences = [
   {
     role: 'Web Developer',
     company: 'Ellocent Labs IT Solutions Pvt. Ltd.',
-    period: 'Mar 2025 – Feb 2026',
-    duration: '11 months',
+    period: 'Feb 2025 – Feb 2026',
+    duration: '1 year',
     type: 'Current',
     color: '#9333ea',
     colorRgb: '147,51,234',
@@ -326,14 +326,12 @@ export default function ExperienceSection() {
             transition={{ duration: 1.5, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
           />
 
-          {/* Experience Cards — full width, stacked */}
           <div className="flex flex-col gap-8 relative z-10">
             {experiences.map((exp, i) => (
               <ExperienceCard key={exp.company} exp={exp} index={i} inView={inView} />
             ))}
           </div>
 
-          {/* Timeline year markers */}
           <div className="hidden md:flex absolute right-0 top-0 bottom-0 flex-col justify-between pointer-events-none pr-2">
             {['2026', '2025', '2024', '2023', '2022'].map((yr, i) => (
               <motion.span
@@ -350,7 +348,6 @@ export default function ExperienceSection() {
           </div>
         </div>
 
-        {/* Education card */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -358,7 +355,6 @@ export default function ExperienceSection() {
           className="mt-10 relative rounded-3xl overflow-hidden"
           whileHover={{ y: -4 }}
         >
-          {/* Card bg */}
           <div
             className="absolute inset-0 rounded-3xl"
             style={{
@@ -414,7 +410,7 @@ export default function ExperienceSection() {
 
               {/* Mini skill chips for edu */}
               <div className="flex flex-wrap gap-2 items-start">
-                {['DSA', 'OS', 'DBMS', 'Networks', 'OOP'].map(s => (
+                {['Web Developer','OS', 'DBMS', 'Networks'].map(s => (
                   <span
                     key={s}
                     className="text-xs font-mono px-2.5 py-1 rounded-lg"
