@@ -173,7 +173,7 @@ function SkillRow({
           />
           {/* Glowing dot at tip */}
           <motion.div
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full"
+            className="absolute right-0 top-[-2.5px] -translate-y-1 w-2.5 h-2.5 rounded-full"
             style={{
               background: color,
               boxShadow: `0 0 10px ${color}, 0 0 4px ${color}`,
@@ -260,14 +260,12 @@ export default function SkillsSection() {
           </p>
         </motion.div>
 
-        {/* Count-up stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-lg mx-auto mb-16">
           {stats.map((stat, i) => (
             <StatCard key={stat.label} {...stat} active={inView} delay={0.2 + i * 0.08} />
           ))}
         </div>
 
-        {/* Skill cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-14">
           {skillGroups.map((group, gi) => (
             <motion.div
@@ -278,7 +276,6 @@ export default function SkillsSection() {
               whileHover={{ y: -5 }}
               className="relative rounded-3xl overflow-hidden"
             >
-              {/* Card background */}
               <div
                 className="absolute inset-0"
                 style={{
