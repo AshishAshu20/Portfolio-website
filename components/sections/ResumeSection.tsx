@@ -109,8 +109,8 @@ export default function ResumeSection() {
               {/* Action buttons */}
               <div className="flex flex-wrap gap-4">
                 <motion.a
-                  href="/Ashish_Resume_BW.pdf"
-                  download="Ashish_Sharma_Resume.pdf"
+                  href="/Ashish_Sharma_full.pdf"
+                  download="Ashish_Sharma_full.pdf"
                   className="btn-primary relative z-10 flex items-center gap-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
@@ -169,7 +169,7 @@ export default function ResumeSection() {
                 </div>
                 <div className="flex items-center gap-3">
                   <a
-                    href="/Ashish_Resume_BW.pdf"
+                    href="/Ashish_Sharma_full.pdf"
                     download="Ashish_Sharma_Resume.pdf"
                     className="flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-xl transition-all"
                     style={{
